@@ -1,5 +1,6 @@
 CC = c++
-CXXFLAGS = -Wall -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+INCLUDES = Harl.hpp
 SOURCES = main.cpp Harl.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 NAME = harlFilter
@@ -9,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CC) $(CXXFLAGS) $^ -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:

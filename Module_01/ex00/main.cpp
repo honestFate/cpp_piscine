@@ -7,7 +7,7 @@ int	main()
 
 	for (int i = 0; i < ZOMBIE_COUNT; i++)
 	{
-		std::cout << "Give him a name: " << std::endl;
+		std::cout << "Give him a name: ";
 		std::cin >> name;
 		zombie_arr[i] = newZombie(name);
 		zombie_arr[i]->announce();
