@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/fate/Рабочий стол/21projects/c++/Module_00'
+make: Leaving directory '/home/fate/Рабочий стол/21projects/c++/Module_00'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
