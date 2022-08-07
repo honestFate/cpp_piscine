@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 14 11:44:16 2022
+# Make data base, printed on Sun Aug  7 22:56:09 2022
 
 # Variables
 
@@ -26,8 +28,6 @@ XDG_SESSION_CLASS = user
 SNAP_COMMON = /var/snap/code/common
 # environment
 XDG_SESSION_TYPE = x11
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -45,11 +45,11 @@ CURDIR := /home/fate/Рабочий стол/21projects/c++
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/99
+SNAP_DATA = /var/snap/code/103
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"4165c719fdf7a78444ed970b4565033b.ru","_translationsConfigFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/tcf.json","_cacheRoot":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru","_resolvedLanguagePackCoreLocation":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"4165c719fdf7a78444ed970b4565033b.ru","_translationsConfigFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/tcf.json","_cacheRoot":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru","_resolvedLanguagePackCoreLocation":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/fate/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/corrupted.info","_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:41545
+JOURNAL_STREAM = 8:46305
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -71,45 +71,39 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-VSCODE_VERBOSE_LOGGING = true
+_ = /snap/code/103/usr/share/code/code
 # environment
-_ = /snap/code/99/usr/share/code/code
-# environment
-MANAGERPID = 1308
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-948d1c52-a65d-4a31-8c16-343d3aeaa47f.sock
+MANAGERPID = 1407
 # environment
 VSCODE_CWD = /home/fate
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/99/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/103/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin:/home/fate/go/bin:/usr/include/GNUstep/:/usr/include/swift-5.6.2-RELEASE-ubuntu20.04/usr/bin/
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin:/home/fate/go/bin:/usr/include/GNUstep/:/usr/include/swift-5.6.2-RELEASE-ubuntu20.04/usr/bin/:/home/fate/Applications/idea/bin/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:@/tmp/.ICE-unix/1538,unix/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:/tmp/.ICE-unix/1538
+SESSION_MANAGER = local/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:@/tmp/.ICE-unix/1637,unix/fate-HP-Pavilion-Gaming-Laptop-15-dk0xxx:/tmp/.ICE-unix/1637
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/fate/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/99
+SNAP = /snap/code/103
 # environment
-SNAP_VERSION = 30d9c6cd
+SNAP_VERSION = da76f933
 # environment
 XDG_MENU_PREFIX = gnome-
-# environment
-VSCODE_LOG_STACK = false
 # environment
 DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 297ad7e43f76488baecb67d23466220e
+INVOCATION_ID = dca914b177b248a3a5732f6d2bb54083
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/99/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -117,13 +111,11 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2339
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5334
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
-# environment
-VSCODE_PIPE_LOGGING = true
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
@@ -131,7 +123,7 @@ PWD = /home/fate/Рабочий стол/21projects/c++
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1500
+SSH_AGENT_PID = 1599
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -143,7 +135,7 @@ HOME = /home/fate
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/fate/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+VSCODE_CODE_CACHE_PATH = /home/fate/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
 # environment
 LOGNAME = fate
 # environment
@@ -173,7 +165,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/fate/snap/code/99
+SNAP_USER_DATA = /home/fate/snap/code/103
 # environment
 SHLVL = 0
 # environment
@@ -183,7 +175,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = fate
 # environment
-SNAP_REVISION = 99
+SNAP_REVISION = 103
 # makefile
 .DEFAULT_GOAL := 
 # environment
@@ -197,7 +189,7 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-762d7a2a-1.68.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-762d7a2a-1.70.0-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
@@ -247,9 +239,9 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2518
+VSCODE_PID = 5382
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=17/141=12%
+# Load=114/1024=11%, Rehash=0, Collisions=17/136=12%
 
 # Pattern-specific Variable Values
 
@@ -303,8 +295,6 @@ GNUmakefile:
 
 # files hash-table stats:
  
-make: *** No rule to make target 'all'.  Stop.
-
 # Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
@@ -318,6 +308,6 @@ make: *** No rule to make target 'all'.  Stop.
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Thu Jul 14 11:44:16 2022
+# Finished Make data base on Sun Aug  7 22:56:09 2022
 
  
