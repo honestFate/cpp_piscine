@@ -1,15 +1,16 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+INCLUDES = Account.hpp
 SOURCES = tests.cpp Account.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-NAME = phonebook
+NAME = bank
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(CC) $(CXXFLAGS) $^ -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:

@@ -35,6 +35,8 @@ void	Sed::sed( std::string const & s1, std::string const & s2 ) {
 	std::string	buf;
 	size_t		pos;
 
+	if (s1.empty())
+		return;
 	while (std::getline(this->_ifs, buf))
 	{
 		while ((pos = buf.find(s1)) != std::string::npos)

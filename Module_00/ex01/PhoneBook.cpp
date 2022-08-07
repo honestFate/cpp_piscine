@@ -143,7 +143,6 @@ int	PhoneBook::_get_index( void ) const {
 		if (digit && line.length() == 1)
 		{
 			index = line[0] - '0';
-			std::cout << index << std::endl;
 			if (1 <= index && index <= this->_contactCount)
 				break;
 		}

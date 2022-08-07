@@ -1,5 +1,6 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+INCLUDES = PhoneBook.hpp Contact.hpp
 SOURCES = main.cpp PhoneBook.cpp Contact.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 NAME = phonebook
@@ -9,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CC) $(CXXFLAGS) $^ -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:
