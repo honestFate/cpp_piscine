@@ -1,9 +1,9 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-INCLUDES = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
-SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+INCLUDES = Bureaucrat.hpp
+SOURCES = main.cpp Bureaucrat.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-NAME = zoo
+NAME = Bureaucrat
 
 all: $(NAME)
 
