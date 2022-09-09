@@ -1,10 +1,11 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
 	Bureaucrat bureaucratA("Bob", 10);
-	Form formA("random form", 9, 11);
+	AForm *formA = new PresidentialPardonForm("random form");
 	try
 	{
 		Form formErr("random form", FORM_LOWEST_GRADE + 1, FORM_HIGHEST_GRADE);

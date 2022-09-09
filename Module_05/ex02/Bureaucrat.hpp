@@ -3,13 +3,13 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #define BUREAUCRAT_HIGHEST_GRADE 1
 #define BUREAUCRAT_LOWEST_GRADE 150
 #define BUREAUCRAT_DEFAULT_NAME "noName"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -34,7 +34,8 @@ public:
 	size_t				decreaseGrade();
 
 	void				isValidGrade(size_t grade) const;
-	bool				signForm(Form& form) const;
+	bool				signForm(AForm& form) const;
+	bool				executeForm(AForm const & form) const;
 
 	class GradeTooHighException : public std::exception
 	{
