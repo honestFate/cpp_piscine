@@ -2,6 +2,7 @@
 #include "Sed.hpp"
 
 int	main( int argc, char *argv[] ) {
+	
 	Sed*	seder;
 
 	if (argc != 4)

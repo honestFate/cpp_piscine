@@ -1,10 +1,10 @@
 #pragma once
 #ifndef ZOMBIE_H
-# define ZOMBIE_H
-# include <string>
-# include <iostream>
+#define ZOMBIE_H
+#include <string>
+#include <iostream>
 
-# define ZOMBIE_COUNT 2 
+#define ZOMBIE_COUNT 2 
 
 class Zombie
 {

@@ -1,8 +1,8 @@
 CC = c++
 CXXFLAGS = -Wall -Werror -std=c++98 -g
-SOURCES = main.cpp Harl.cpp
+SOURCES = main.cpp Fixed.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-NAME = harlFilter
+NAME = fixedPoint
 
 all: $(NAME)
 

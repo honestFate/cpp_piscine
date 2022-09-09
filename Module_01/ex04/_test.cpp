@@ -1,6 +1,7 @@
 #include "Sed.hpp"
 
-void	test(std::string const & file, std::string const & s1, std::string const & s2, std::string const res[], int res_size) {
+void	test(const std::string& file, const std::string& s1, const std::string& s2, std::string const res[], int res_size) {
+
 	Sed*	seder;
 
 	seder = Sed::init(file);
