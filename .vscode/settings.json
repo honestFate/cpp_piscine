@@ -25,6 +25,10 @@
 		"system_error": "cpp",
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
-		"cstring": "cpp"
+		"cstring": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"fstream": "cpp",
+		"ctime": "cpp"
 	}
 }

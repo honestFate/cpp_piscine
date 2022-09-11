@@ -1,7 +1,7 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-INCLUDES = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
-SOURCES = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+INCLUDES = Bureaucrat.hpp
+SOURCES = main.cpp Bureaucrat.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 NAME = Bureaucrat
 
@@ -18,7 +18,6 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) *_shrubbery
 
 re: fclean all
 
