@@ -3,7 +3,14 @@
 #define CONVERTER_H
 
 #include <iostream>
-#include <ctype.h>
+#include <sstream>
+#include <cctype>
+#include <limits>
+#include <iomanip>
+#include <cerrno>
+#include <cfloat>
+#include <cmath>
+
 
 class Converter
 {
@@ -16,14 +23,17 @@ public:
 
 	const Converter&	operator=(const Converter& src);
 
-	void	convert(const std::string& str);
+	void	convert();
 
 private:
+
+	std::string	_str;
 
 	char	toChar(const std::string& str);
 	int		toInt(const std::string& str);
 	float	toFloat(const std::string& str);
 	double	toDouble(const std::string& str);
+	bool	isValidNumeric(const std::string& str);
 
 };
 
