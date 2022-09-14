@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <sstream>
-#include <cctype>
+//#include <cctype>
 #include <limits>
 #include <iomanip>
 #include <cerrno>
@@ -18,22 +18,52 @@ class Converter
 public:
 
 	Converter();
+	Converter(const std::string& str);
 	Converter(const Converter& src);
 	~Converter();
 
 	const Converter&	operator=(const Converter& src);
 
-	void	convert();
+	void				convert() const;
+	const std::string&	getSourceStr() const;
+	void				setSourceStr(const std::string& str);
+
 
 private:
 
-	std::string	_str;
+	enum	RealType
+	{
+		charType,
+		integerType,
+		floatType,
+		doubleType,
+		undefinedType,
+		empty
+	};
 
-	char	toChar(const std::string& str);
-	int		toInt(const std::string& str);
-	float	toFloat(const std::string& str);
-	double	toDouble(const std::string& str);
-	bool	isValidNumeric(const std::string& str);
+	std::string	_sourceStr;
+
+	RealType	identifyStrType() const;
+	bool		isCharStr() const;
+	bool		isIntegerStr() const;
+	bool		isFloatStr() const;
+	bool		isDoubleStr() const;
+	bool		isEmptyStr() const;
+	bool		isFloatPointNmb() const;
+
+	void		convertCharStr() const;
+	void		convertIntStr() const;
+	void		convertFloatStr() const;
+	void		convertDoubleStr() const;
+
+	std::string	truncateToChar(int integer) const;
+	std::string	truncateToChar(float flt) const;
+	std::string	truncateToChar(double dbl) const;
+
+	std::string	truncateToInt(float flt) const;
+	std::string	truncateToInt(double dbl) const;
+
+	std::string	truncateToFloat(double dbl) const;
 
 };
 
