@@ -1,7 +1,7 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 INCLUDES = iter.hpp
-SOURCES = main.cpp
+SOURCES = main.cpp Integer.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 NAME = template
 

@@ -71,11 +71,7 @@ Converter::RealType	Converter::identifyStrType() const
 
 bool		Converter::isCharStr() const
 {
-	if (this->_sourceStr.length() == 1 && !isdigit(this->_sourceStr[0]))
-	{
-		return true;
-	}
-	return false;
+	return this->_sourceStr.length() == 1 && !isdigit(this->_sourceStr[0]);
 }
 
 bool		Converter::isIntegerStr() const
@@ -86,28 +82,20 @@ bool		Converter::isIntegerStr() const
 	{
 		++ptr;
 	}
-	if (!isdigit(*ptr))
+	if (isdigit(*ptr))
 	{
-		return false;
-	}
-	while (*ptr)
-	{
-		if (!isdigit(*ptr))
+		while (*ptr && isdigit(*ptr))
 		{
-			return false;
+			++ptr;
 		}
-		++ptr;
 	}
-	return true;
+	return *ptr == '\0';
 }
 
 bool		Converter::isFloatStr() const
 {
-	if (this->_sourceStr == "nanf" || this->_sourceStr == "+inff" || this->_sourceStr == "-inff")
-	{
-		return true;
-	}
-	if (this->isFloatPointNmb() && this->_sourceStr.back() == 'f')
+	if (this->_sourceStr == "nanf" || this->_sourceStr == "+inff" || this->_sourceStr == "-inff"
+		|| (this->isFloatPointNmb() && this->_sourceStr.back() == 'f'))
 	{
 		return true;
 	}
@@ -116,11 +104,8 @@ bool		Converter::isFloatStr() const
 
 bool	Converter::isDoubleStr() const
 {
-	if (this->_sourceStr == "nan" || this->_sourceStr == "+inf" || this->_sourceStr == "-inf")
-	{
-		return true;
-	}
-	if (this->isFloatPointNmb() && this->_sourceStr.back() != 'f')
+	if (this->_sourceStr == "nan" || this->_sourceStr == "+inf" || this->_sourceStr == "-inf"
+		|| (this->isFloatPointNmb() && this->_sourceStr.back() != 'f'))
 	{
 		return true;
 	}
@@ -215,7 +200,6 @@ void	Converter::convertIntStr() const
 		std::cout << "Can't convert this DOUBLE, because - ???" << std::endl;
 		return;
 	}
-
 	int intRes = static_cast<int>(longRes);
 	std::cout	<< std::fixed << std::setprecision(1)
 				<< "char: " << truncateToChar(intRes) << std::endl
@@ -261,8 +245,8 @@ void	Converter::convertFloatStr() const
 	{
 		std::cout << std::fixed << std::setprecision(1);
 	}
-	std::cout	<< "char: " << truncateToChar(fltRes) << std::endl
-				<< "int: " << truncateToInt(fltRes) << std::endl
+	std::cout	<< "char: " << truncateToChar(static_cast<double>(fltRes)) << std::endl
+				<< "int: " << truncateToInt(static_cast<double>(fltRes)) << std::endl
 				<< "float: " << fltRes << 'f' << std::endl
 				<< "double: " << dbl << std::endl;
 }
@@ -291,7 +275,6 @@ void	Converter::convertDoubleStr() const
 	}
 	if (ceil(dblRes) == dblRes)
 	{
-		std::cout << "Message" << std::endl;
 		std::cout << std::fixed << std::setprecision(1);
 	}
 	std::cout	<< "char: " << truncateToChar(dblRes) << std::endl
@@ -312,36 +295,6 @@ std::string	Converter::truncateToChar(int integer) const
 	else
 	{
 		char c = static_cast<char>(integer);
-		if (isprint(c))
-		{
-			str = "'";
-			str += c;
-			str += "'";
-		}
-		else
-		{
-			str = "Non displayable";
-		}
-	}
-	return str;
-}
-
-std::string	Converter::truncateToChar(float flt) const
-{
-	std::string str;
-	
-	if (!isfinite(flt))
-	{
-		str = "impossible";
-	}
-	else if (flt > std::numeric_limits<char>::max()
-		|| flt < std::numeric_limits<char>::lowest())
-	{
-		str = "Overflow!";
-	}
-	else
-	{
-		char c = static_cast<char>(flt);
 		if (isprint(c))
 		{
 			str = "'";
@@ -382,29 +335,6 @@ std::string	Converter::truncateToChar(double dbl) const
 		{
 			str = "Non displayable";
 		}
-	}
-	return str;
-}
-
-std::string	Converter::truncateToInt(float flt) const
-{
-	std::string str;
-	
-	if (!isfinite(flt))
-	{
-		str = "impossible";
-	}
-	else if (flt > std::numeric_limits<int>::max()
-		|| flt < std::numeric_limits<int>::lowest())
-	{
-		str = "Overflow!";
-	}
-	else
-	{
-		int i = static_cast<int>(flt);
-		std::ostringstream ss;
-     	ss << i;
-		str = ss.str();
 	}
 	return str;
 }

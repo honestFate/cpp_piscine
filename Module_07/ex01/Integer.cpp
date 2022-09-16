@@ -36,6 +36,13 @@ int	Integer::operator++()
 	return this->_x;
 }
 
+int	Integer::operator--()
+{
+	--(this->_x);
+
+	return this->_x;
+}
+
 int	Integer::getX() const
 {
 	return this->_x;

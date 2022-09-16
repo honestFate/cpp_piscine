@@ -16,6 +16,7 @@ public:
 
 	const Integer&	operator=(const Integer& src);
 	int				operator++();
+	int				operator--();
 
 	int	getX() const;
 	void setX(int x);

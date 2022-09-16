@@ -27,7 +27,11 @@ const Intern& Intern::operator=(const Intern& src)
 
 AForm* Intern::makeForm(const std::string& formName, const std::string& formTarget)
 {
-	std::string	avaliableForms[FORMS_TOTAL] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	std::string	avaliableForms[FORMS_TOTAL] = {
+		"shrubbery creation",
+		"robotomy request",
+		"presidential pardon"
+	};
 	AForm* (Intern::*createForm[FORMS_TOTAL])(const std::string&) = {
 		&Intern::makeShrubberyCreationForm,
 		&Intern::makeRobotomyRequestForm,

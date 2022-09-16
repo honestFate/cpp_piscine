@@ -1,9 +1,9 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-INCLUDES = serialization.hpp Data.hpp
-SOURCES = main.cpp serialization.cpp Data.cpp
+INCLUDES = whatever.hpp
+SOURCES = main.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-NAME = serializator
+NAME = template
 
 all: $(NAME)
 

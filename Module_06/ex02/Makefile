@@ -1,9 +1,9 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-INCLUDES = Bureaucrat.hpp
-SOURCES = main.cpp Bureaucrat.cpp
+INCLUDES = generator.hpp identifier.hpp Base.hpp A.hpp B.hpp C.hpp
+SOURCES = main.cpp generator.cpp identifier.cpp Base.cpp A.cpp B.cpp C.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-NAME = Bureaucrat
+NAME = dynamic
 
 all: $(NAME)
 

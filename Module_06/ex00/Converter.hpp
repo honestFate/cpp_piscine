@@ -57,10 +57,8 @@ private:
 	void		convertDoubleStr() const;
 
 	std::string	truncateToChar(int integer) const;
-	std::string	truncateToChar(float flt) const;
 	std::string	truncateToChar(double dbl) const;
 
-	std::string	truncateToInt(float flt) const;
 	std::string	truncateToInt(double dbl) const;
 
 	std::string	truncateToFloat(double dbl) const;
