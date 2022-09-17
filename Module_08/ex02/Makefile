@@ -1,6 +1,6 @@
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-INCLUDES = MutantStack.hpp
+INCLUDES = MutantStack.hpp MutantStack.tpp
 SOURCES = main.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 NAME = MutantStack
