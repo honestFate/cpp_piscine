@@ -5,12 +5,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-#define SCAV_TRAP_DEFAULT_HEALTH 100
-#define SCAV_TRAP_DEFAULT_ENERGY 50
-#define SCAV_TRAP_DEFAULT_DAMAGE 20
-
-class ScavTrap : public ClapTrap {
-
+class ScavTrap : public virtual ClapTrap {
 
 public:
 
@@ -23,6 +18,12 @@ public:
 
 	void	attack(const std::string& target);
 	void	guardGate();
+
+protected:
+
+	static const int _initialHealth;
+	static const int _initialEnergy;
+	static const int _initialDamage;
 
 };
 

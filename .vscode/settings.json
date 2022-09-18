@@ -1,5 +1,5 @@
 {
-	"C_Cpp.errorSquiggles": "Disabled",
+	"C_Cpp.errorSquiggles": "Enabled",
 	"files.associations": {
 		"__bit_reference": "cpp",
 		"__bits": "cpp",
@@ -82,6 +82,7 @@
 		"ranges": "cpp",
 		"stop_token": "cpp",
 		"filesystem": "cpp",
-		"version": "cpp"
+		"version": "cpp",
+		"*.tpp": "cpp"
 	}
 }

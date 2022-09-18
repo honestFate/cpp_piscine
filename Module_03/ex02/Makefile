@@ -1,15 +1,16 @@
 CC = c++
 CXXFLAGS = -Wall -Werror -std=c++98 -g
-SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp FlagTrap.hpp
+SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp FlagTrap.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-NAME = ScavTrap
+NAME = FlagTrap
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(CC) $(CXXFLAGS) $^ -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(INCLUDES)
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean:
