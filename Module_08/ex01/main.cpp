@@ -22,6 +22,13 @@ int main()
 		Span sp = Span(5);
 		sp.fillRandom();
 		sp.printVec();
+		Span a = sp;
+		a.printVec();
+		Span b;
+		b = a;
+		b.printVec();
+		b.fillRandom();
+		b.printVec();
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}

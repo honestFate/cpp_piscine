@@ -8,6 +8,7 @@
 #include <iterator>
 #include <ctime>
 #include <cstdlib>
+#include <sstream>
 
 #define DEF_SIZE 8
 
@@ -23,13 +24,49 @@ public:
 
 	const Span&	operator=(const Span& src);
 
-	void	addNumber(int number);
-	size_t	shortestSpan() const;
-	size_t	longestSpan() const;
-	void	printVec() const;
+	void		addNumber(int number);
+	size_t		shortestSpan();
+	size_t		longestSpan() const;
+	void		printVec() const;
+	void		fillRandom();
+	size_t		getSize() const;
+
 	static int	getRandom();
-	void	fillRandom();
-	size_t	getSize() const;
+
+	class ContainerReachLimit : public std::exception
+	{
+
+	public:
+
+		ContainerReachLimit();
+		ContainerReachLimit(const std::string& msg);
+		~ContainerReachLimit() throw();
+
+		const char* what() const throw();
+
+	private:
+
+		std::string	_message;
+
+	};
+
+	class NotEnoughItems : public std::exception
+	{
+
+	public:
+
+		NotEnoughItems();
+		NotEnoughItems(const std::string& msg);
+		~NotEnoughItems() throw();
+
+		const char* what() const throw();
+
+	private:
+
+		std::string	_message;
+
+	};
+	
 
 private:
 
