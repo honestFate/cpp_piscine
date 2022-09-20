@@ -2,8 +2,8 @@
 
 Dog::Dog() {
 
-	this->type = "Dog";
 	std::cout << "Dog object created" << std::endl;
+	this->type = "Dog";
 }
 
 Dog::~Dog() {

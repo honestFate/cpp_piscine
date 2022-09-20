@@ -20,11 +20,16 @@ const Brain& Brain::operator=(const Brain& src)
 	std::cout << "Brainwashing..." << std::endl;
 	if (this != &src)
 	{
-		for (size_t i = 0; i < src.index; i++)
+		size_t i = 0;
+		for (; i < src.index; i++)
 		{
 			this->ideas[i] = src.ideas[i];
 		}
-		this->index = src.index;	
+		for (; i < BRAIN_CAPACITY; i++)
+		{
+			this->ideas[i].clear();
+		}
+		this->index = src.index;
 	}
 	return (*this);
 }
@@ -41,12 +46,17 @@ void	Brain::setNewIdea(const std::string& idea)
 
 void	Brain::showAllIdeas() const
 {
+	bool isEmpty = true;
 	size_t i = 0;
-	for (; i < index; i++)
+	for (; i < BRAIN_CAPACITY; i++)
 	{
-		std::cout << this->ideas[i] << std::endl;
+		if (!this->ideas[i].empty())
+		{
+			std::cout << this->ideas[i] << std::endl;
+			isEmpty = false;
+		}
 	}
-	if (i == 0)
+	if (isEmpty)
 	{
 		std::cout << "*brain is empty*" << std::endl;
 	}

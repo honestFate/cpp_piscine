@@ -19,7 +19,7 @@ class AMateria
 		AMateria(std::string const & type);
 		AMateria();
 		AMateria(const AMateria& src);
-		~AMateria();
+		virtual ~AMateria();
 
 		const AMateria&	operator=(const AMateria& src);
 

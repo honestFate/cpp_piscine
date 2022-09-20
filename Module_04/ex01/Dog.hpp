@@ -19,8 +19,8 @@ public:
 
 	virtual void	makeSound() const;
 	virtual void	copy(const Animal& src);
-	void			setNewIdea(const std::string& idea);
-	void			showAllIdeas() const;
+	virtual void	setNewIdea(const std::string& idea);
+	virtual void	showAllIdeas() const;
 
 private:
 

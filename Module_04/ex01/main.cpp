@@ -21,8 +21,16 @@ int main()
 		}
 	}
 
+	std::cout << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
 	animals[0]->showAllIdeas();
+	std::cout << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
 	animals[1]->showAllIdeas();
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
 
 	for (size_t i = TEST_ANIMALS_ARRAY_SIZE / 2; i < TEST_ANIMALS_ARRAY_SIZE; i++)
 	{
@@ -33,17 +41,26 @@ int main()
 		}
 	}
 
-	animals[0]->showAllIdeas();
-	animals[1]->showAllIdeas();
 	animals[1]->setNewIdea("Bark");
-
 	*animals[0] = *animals[1];
 
+	std::cout << std::endl;
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
 	animals[1]->setNewIdea("Play");
 	animals[0]->showAllIdeas();
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
 	animals[1]->showAllIdeas();
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
 
 	*animals[0] = *animals[2];
+	std::cout << "--------------------" << std::endl;
+	std::cout << std::endl;
+	*animals[1] = *animals[0];
+	animals[1]->showAllIdeas();
+	std::cout << std::endl;
 
 	for (size_t i = 0; i < TEST_ANIMALS_ARRAY_SIZE; i++)
 	{

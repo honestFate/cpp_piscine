@@ -11,7 +11,7 @@ public:
 
 	Animal();
 	Animal(const Animal& src);
-	~Animal();
+	virtual	~Animal();
 
 	const Animal&	operator=(const Animal& src);
 

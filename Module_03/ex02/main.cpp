@@ -22,6 +22,10 @@ int	main() {
 		b.guardGate();
 	}
 
+	std::cout << std::endl;
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << std::endl;
+
 	FlagTrap c("Bobi center");
 	c.attack("mid tower");
 	c.takeDamage(5);

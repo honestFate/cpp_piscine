@@ -41,11 +41,10 @@ void	Character::equip(AMateria* m)
 	{
 		if (!this->_inventory[i])
 		{
-			std::cout << "equip " << i << std::endl;
+			std::cout << "equiping " << m->getType() << " into " << i << " slot" << std::endl;
 			this->_inventory[i] = m;
 			break;
 		}
-		std::cout << "Try equip " << i << std::endl;
 	}
 }
 

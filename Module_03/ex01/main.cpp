@@ -11,6 +11,10 @@ int	main() {
 		a.attack("bottom tower");
 	}
 
+	std::cout << std::endl;
+	std::cout << "--------------------------------" << std::endl;
+	std::cout << std::endl;
+
 	ScavTrap b("Bobi");
 
 	b.attack("mid tower");
