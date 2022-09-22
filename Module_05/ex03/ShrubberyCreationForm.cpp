@@ -34,7 +34,7 @@ const ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCre
 
 void	ShrubberyCreationForm::execTarget() const
 {
-	std::ofstream fout(_target + "_shrubbery");
+	std::ofstream fout((_target + "_shrubbery").c_str());
 
 	for(size_t i = 0; i < 3; i++)
 	{

@@ -95,7 +95,7 @@ bool		Converter::isIntegerStr() const
 bool		Converter::isFloatStr() const
 {
 	if (this->_sourceStr == "nanf" || this->_sourceStr == "+inff" || this->_sourceStr == "-inff"
-		|| (this->isFloatPointNmb() && this->_sourceStr.back() == 'f'))
+		|| (this->isFloatPointNmb() && this->_sourceStr[this->_sourceStr.length() - 1] == 'f'))
 	{
 		return true;
 	}
@@ -105,7 +105,7 @@ bool		Converter::isFloatStr() const
 bool	Converter::isDoubleStr() const
 {
 	if (this->_sourceStr == "nan" || this->_sourceStr == "+inf" || this->_sourceStr == "-inf"
-		|| (this->isFloatPointNmb() && this->_sourceStr.back() != 'f'))
+		|| (this->isFloatPointNmb() && this->_sourceStr[this->_sourceStr.length() - 1] != 'f'))
 	{
 		return true;
 	}
@@ -231,10 +231,9 @@ void	Converter::convertFloatStr() const
 		std::cout << "Can't convert this FLOAT, because - ???" << std::endl;
 		return;
 	}
-	if (isfinite(dbl))
+	if (std::isfinite(dbl))
 	{
-		if (dbl < std::numeric_limits<float>::lowest()
-			|| dbl > std::numeric_limits<float>::max())
+		if (dbl < -FLT_MAX || dbl > FLT_MAX)
 		{
 			std::cout << "Can't convert this FLOAT, because - OVERFLOW" << std::endl;
 			return;
@@ -279,7 +278,7 @@ void	Converter::convertDoubleStr() const
 	}
 	std::cout	<< "char: " << truncateToChar(dblRes) << std::endl
 				<< "int: " << truncateToInt(dblRes) << std::endl
-				<< "float: " << truncateToFloat(dblRes) << 'f' << std::endl
+				<< "float: " << truncateToFloat(dblRes) << ((dblRes > FLT_MAX || dblRes < -FLT_MAX) ? '\0' : 'f') << std::endl
 				<< "double: " << dblRes << std::endl;
 }
 
@@ -288,7 +287,7 @@ std::string	Converter::truncateToChar(int integer) const
 	std::string str;
 
 	if (integer > std::numeric_limits<char>::max()
-		|| integer < std::numeric_limits<char>::lowest())
+		|| integer < std::numeric_limits<char>::min())
 	{
 		str = "Overflow!";
 	}
@@ -313,12 +312,12 @@ std::string	Converter::truncateToChar(double dbl) const
 {
 	std::string str;
 	
-	if (!isfinite(dbl))
+	if (!std::isfinite(dbl))
 	{
 		str = "impossible";
 	}
 	else if (dbl > std::numeric_limits<char>::max()
-		|| dbl < std::numeric_limits<char>::lowest())
+		|| dbl < std::numeric_limits<char>::min())
 	{
 		str = "Overflow!";
 	}
@@ -343,12 +342,12 @@ std::string	Converter::truncateToInt(double dbl) const
 {
 	std::string str;
 	
-	if (!isfinite(dbl))
+	if (!std::isfinite(dbl))
 	{
 		str = "impossible";
 	}
 	else if (dbl > std::numeric_limits<int>::max()
-		|| dbl < std::numeric_limits<int>::lowest())
+		|| dbl < std::numeric_limits<int>::min())
 	{
 		str = "Overflow!";
 	}
@@ -367,8 +366,7 @@ std::string	Converter::truncateToFloat(double dbl) const
 {
 	std::string str;
 	
-	if (isfinite(dbl) && (dbl > std::numeric_limits<float>::max()
-		|| dbl < std::numeric_limits<float>::lowest()))
+	if (std::isfinite(dbl) && (dbl > FLT_MAX || dbl < -FLT_MAX))
 	{
 		str = "Overflow!";
 	}

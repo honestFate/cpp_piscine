@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat() :
 _name(BUREAUCRAT_DEFAULT_NAME),
 _grade(BUREAUCRAT_LOWEST_GRADE)
 {
-	std::cout << "Bureaucrat object created by default constructor" << std::endl;
+	std::cout << GREEN"Bureaucrat object created by default constructor"RESET << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -14,7 +14,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : _name(src.getName())
 {
-	std::cout << "Bureaucrat copy constructor called" << std::endl;
+	std::cout << GREEN"Bureaucrat copy constructor called"RESET << std::endl;
 	*this = src;
 }
 
@@ -29,10 +29,10 @@ _grade(grade)
 	catch(const std::exception& e)
 	{
 		_grade = BUREAUCRAT_LOWEST_GRADE;
-		std::cout << "Bureaucrat " << _name << " called execption" << std::endl;
+		std::cout << RED"Bureaucrat " << _name << " called execption"RESET << std::endl;
 		throw;
 	}
-	std::cout << *this << " created" << std::endl;
+	std::cout << GREEN << *this << " created"RESET << std::endl;
 }
 
 const Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
@@ -106,34 +106,22 @@ void	Bureaucrat::isValidGrade(size_t grade) const
 	}
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException()
-{
-	std::cout << "Exception Bureaucrat::GradeTooHighException created" << std::endl;
-}
+Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
-{
-	std::cout << "Exception Bureaucrat::GradeTooHighException deleted" << std::endl;
-}
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "grade was too high";
+	return RED"grade was too high"RESET;
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException()
-{
-	std::cout << "Exception Bureaucrat::GradeTooLowException created" << std::endl;
-}
+Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
-{
-	std::cout << "Exception Bureaucrat::GradeTooLowException deleted" << std::endl;
-}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "grade was too low";
+	return RED"grade was too low"RESET;
 }
 
 bool	Bureaucrat::signForm(Form& form) const
@@ -141,13 +129,13 @@ bool	Bureaucrat::signForm(Form& form) const
 	try
 	{
 		form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
+		std::cout << GREEN << this->_name << " signed " << form.getName() << RESET << std::endl;
 		return true;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << this->_name << " couldn't sign " << form.getName()
-				<< " because " << e.what() << std::endl;
+		std::cerr << RED << this->_name << " couldn't sign " << form.getName()
+				<< " because " << e.what() << RESET << std::endl;
 	}
 	return false;
 }

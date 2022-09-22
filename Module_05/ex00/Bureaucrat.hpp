@@ -7,6 +7,9 @@
 #define HIGHEST_GRADE 1
 #define LOWEST_GRADE 150
 #define DEFAULT_NAME "noName"
+#define RED "\033[1;91m"
+#define GREEN "\033[1;92m"
+#define RESET "\033[0m"
 
 class Bureaucrat
 {

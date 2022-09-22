@@ -24,12 +24,10 @@ int	main()
 	}
 	std::cout << A << std::endl;
 	std::cout << B << std::endl;
-	A++;
-	++A;
-	std::cout << A << std::endl;
-	--B;
-	B--;
-	std::cout << B << std::endl;
+	std::cout << A++ << std::endl;
+	std::cout << ++A << std::endl;
+	std::cout << B-- << std::endl;
+	std::cout << --B << std::endl;
 	/*while (1)
 	{
 		B--;

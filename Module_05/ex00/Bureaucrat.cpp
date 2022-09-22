@@ -4,7 +4,7 @@ Bureaucrat::Bureaucrat() :
 _name(DEFAULT_NAME),
 _grade(LOWEST_GRADE)
 {
-	std::cout << "Bureaucrat object created by default constructor" << std::endl;
+	std::cout << GREEN << "Bureaucrat object created by default constructor" << RESET << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -29,10 +29,10 @@ _grade(grade)
 	catch(const std::exception& e)
 	{
 		_grade = LOWEST_GRADE;
-		std::cout << "Bureaucrat " << _name << " called execption" << std::endl;
+		std::cout << RED << "Bureaucrat " << _name << " called execption" << RESET << std::endl;
 		throw;
 	}
-	std::cout << *this << " created" << std::endl;
+	std::cout << GREEN << *this << " created" << RESET << std::endl;
 }
 
 const Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
@@ -106,34 +106,22 @@ void	Bureaucrat::isValidGrade(size_t grade) const
 	}
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException()
-{
-	std::cout << "Exception GradeTooHighException created" << std::endl;
-}
+Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
-{
-	std::cout << "Exception GradeTooHighException deleted" << std::endl;
-}
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "grade was too high";
+	return RED"grade was too high"RESET;
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException()
-{
-	std::cout << "Exception GradeTooLowException created" << std::endl;
-}
+Bureaucrat::GradeTooLowException::GradeTooLowException() {}
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
-{
-	std::cout << "Exception GradeTooLowException deleted" << std::endl;
-}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "grade was too low";
+	return RED"grade was too low"RESET;
 }
 
 std::ostream&	operator<<(std::ostream&o, const Bureaucrat& obj)

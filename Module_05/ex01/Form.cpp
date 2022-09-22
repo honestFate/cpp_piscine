@@ -6,7 +6,7 @@ _isSigned(false),
 _gradeToSign(1),
 _gradeToExecute(1)
 {
-	std::cout << *this << ". Created by default constructor" << std::endl;
+	std::cout << GREEN << *this << ". Created by default constructor"RESET << std::endl;
 }
 
 Form::Form(const std::string& name, size_t gradeToSign, size_t gradeToExecute) :
@@ -17,7 +17,7 @@ _gradeToExecute(gradeToExecute)
 {
 	isValidGrade(gradeToSign);
 	isValidGrade(gradeToExecute);
-	std::cout << *this << ". Created" << std::endl;
+	std::cout << GREEN << *this << ". Created"RESET << std::endl;
 }
 
 Form::Form(const Form& src) :
@@ -26,7 +26,7 @@ _isSigned(false),
 _gradeToSign(src._gradeToSign),
 _gradeToExecute(src._gradeToExecute)
 {
-	std::cout << "Form copy constructor" << std::endl;
+	std::cout << GREEN"Form copy constructor"RESET << std::endl;
 	*this = src;
 }
 
@@ -63,34 +63,22 @@ size_t	Form::getGradeToExecute() const
 	return this->_gradeToExecute;
 }
 
-Form::GradeTooHighException::GradeTooHighException()
-{
-	std::cout << "Exception Form::GradeTooHighException created" << std::endl;
-}
+Form::GradeTooHighException::GradeTooHighException() {}
 
-Form::GradeTooHighException::~GradeTooHighException() throw()
-{
-	std::cout << "Exception Form::GradeTooHighException deleted" << std::endl;
-}
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
 
 const char*	Form::GradeTooHighException::what() const throw()
 {
-	return "grade was too high";
+	return RED"grade was too high"RESET;
 }
 
-Form::GradeTooLowException::GradeTooLowException()
-{
-	std::cout << "Exception Form::GradeTooLowException created" << std::endl;
-}
+Form::GradeTooLowException::GradeTooLowException() {}
 
-Form::GradeTooLowException::~GradeTooLowException() throw()
-{
-	std::cout << "Exception Form::GradeTooLowException deleted" << std::endl;
-}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
 const char*	Form::GradeTooLowException::what() const throw()
 {
-	return "grade was too low";
+	return RED"grade was too low"RESET;
 }
 
 void	Form::isValidGrade(size_t grade) const

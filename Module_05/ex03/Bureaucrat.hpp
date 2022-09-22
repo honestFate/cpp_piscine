@@ -8,6 +8,9 @@
 #define BUREAUCRAT_HIGHEST_GRADE 1
 #define BUREAUCRAT_LOWEST_GRADE 150
 #define BUREAUCRAT_DEFAULT_NAME "noName"
+#define RED "\033[1;91m"
+#define GREEN "\033[1;92m"
+#define RESET "\033[0m"
 
 class AForm;
 

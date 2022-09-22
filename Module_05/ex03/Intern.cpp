@@ -42,11 +42,11 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& formTarg
 	{
 		if (formName == avaliableForms[i])
 		{
-			std::cout << "Intern creates " << formName << std::endl;
+			std::cout << GREEN << "Intern creates " << formName << RESET << std::endl;
 			return (this->*createForm[i])(formTarget);
 		}
 	}
-	std::cout << "Form " << formName << " doesn't exist!" << std::endl;
+	std::cout << RED"Form " << formName << " doesn't exist!"RESET << std::endl;
 	return (NULL);
 }
 

@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <exception>
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"

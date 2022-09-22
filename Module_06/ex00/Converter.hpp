@@ -4,13 +4,12 @@
 
 #include <iostream>
 #include <sstream>
-//#include <cctype>
 #include <limits>
 #include <iomanip>
 #include <cerrno>
 #include <cfloat>
 #include <cmath>
-
+#include <ctype.h>
 
 class Converter
 {

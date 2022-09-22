@@ -34,7 +34,7 @@ const RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestF
 
 void	RobotomyRequestForm::execTarget() const
 {
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	if (std::rand() % 2 == 1)
 	{
 		std::cout << _target << " has been robotomized successfully!" << std::endl;

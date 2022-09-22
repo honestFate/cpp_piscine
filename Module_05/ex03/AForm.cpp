@@ -63,64 +63,40 @@ size_t	AForm::getGradeToExecute() const
 	return this->_gradeToExecute;
 }
 
-AForm::GradeTooHighException::GradeTooHighException()
-{
-	std::cout << "Exception AForm::GradeTooHighException created" << std::endl;
-}
+AForm::GradeTooHighException::GradeTooHighException() {}
 
-AForm::GradeTooHighException::~GradeTooHighException() throw()
-{
-	std::cout << "Exception AForm::GradeTooHighException deleted" << std::endl;
-}
+AForm::GradeTooHighException::~GradeTooHighException() throw() {}
 
 const char*	AForm::GradeTooHighException::what() const throw()
 {
-	return "grade was too high";
+	return RED"grade was too high"RESET;
 }
 
-AForm::GradeTooLowException::GradeTooLowException()
-{
-	std::cout << "Exception AForm::GradeTooLowException created" << std::endl;
-}
+AForm::GradeTooLowException::GradeTooLowException() {}
 
-AForm::GradeTooLowException::~GradeTooLowException() throw()
-{
-	std::cout << "Exception AForm::GradeTooLowException deleted" << std::endl;
-}
+AForm::GradeTooLowException::~GradeTooLowException() throw() {}
 
 const char*	AForm::GradeTooLowException::what() const throw()
 {
-	return "grade was too low";
+	return RED"grade was too low"RESET;
 }
 
-AForm::FormNotSigned::FormNotSigned()
-{
-	std::cout << "Exception AForm::FormNotSigned created" << std::endl;
-}
+AForm::FormNotSigned::FormNotSigned() {}
 
-AForm::FormNotSigned::~FormNotSigned() throw()
-{
-	std::cout << "Exception AForm::FormNotSigned deleted" << std::endl;
-}
+AForm::FormNotSigned::~FormNotSigned() throw() {}
 
 const char*	AForm::FormNotSigned::what() const throw()
 {
-	return "tryed to execute not signed form";
+	return RED"tryed to execute not signed form"RESET;
 }
 
-AForm::AlreadySigned::AlreadySigned()
-{
-	std::cout << "Exception AForm::AlreadySigned created" << std::endl;
-}
+AForm::AlreadySigned::AlreadySigned() {}
 
-AForm::AlreadySigned::~AlreadySigned() throw()
-{
-	std::cout << "Exception AForm::AlreadySigned deleted" << std::endl;
-}
+AForm::AlreadySigned::~AlreadySigned() throw() {}
 
 const char*	AForm::AlreadySigned::what() const throw()
 {
-	return "form already signed";
+	return RED"form already signed"RESET;
 }
 
 void	AForm::isValidGrade(size_t grade) const
