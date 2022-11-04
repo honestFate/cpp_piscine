@@ -29,27 +29,27 @@ void	ftIsFinite(const T&)
 }
 
 template<>
-void	ftIsFinite<float&>(float& flt)
+void	ftIsFinite<float>(float& flt)
 {
-	std::cout << flt << " isfinite non const float: " << std::boolalpha << std::isfinite(flt) << std::endl;
+	std::cout << std::boolalpha << flt << " isfinite non const float: " << static_cast<bool>(std::isfinite(flt)) << std::endl;
 }
 
 template<>
-void	ftIsFinite<const float&>(const float & flt)
+void	ftIsFinite<const float>(const float & flt)
 {
-	std::cout << flt << " isfinite const float: " << std::boolalpha << std::isfinite(flt) << std::endl;
+	std::cout << std::boolalpha << flt << " isfinite const float: " << static_cast<bool>(std::isfinite(flt)) << std::endl;
 }
 
 template<>
-void	ftIsFinite<double&>(double& dbl)
+void	ftIsFinite<double>(double& dbl)
 {
-	std::cout << dbl << " isfinite non const double: " << std::boolalpha << std::isfinite(dbl) << std::endl;
+	std::cout << std::boolalpha << dbl << " isfinite non const double: " << static_cast<bool>(std::isfinite(dbl)) << std::endl;
 }
 
 template<>
-void	ftIsFinite<const double&>(const double& dbl)
+void	ftIsFinite<const double>(const double& dbl)
 {
-	std::cout << dbl << " isfinite const double: " << std::boolalpha << std::isfinite(dbl) << std::endl;
+	std::cout << std::boolalpha << dbl << " isfinite const double: " << static_cast<bool>(std::isfinite(dbl)) << std::endl;
 }
 
 template<typename T>
@@ -99,10 +99,10 @@ int main()
 			dblArray[i] = 4.2f;
 		}
 
-		iter<float>(static_cast<const float *>(fltArray), size, &ftIsFinite<const float&>);
-		iter<float>(fltArray, size, &ftIsFinite<float&>);
-		iter<double>(static_cast<const double *>(dblArray), size, &ftIsFinite<const double&>);
-		iter<double>(static_cast<double *>(dblArray), size, &ftIsFinite<double&>);
+		iter<float>(static_cast<const float *>(fltArray), size, &ftIsFinite<const float>);
+		iter<float>(fltArray, size, &ftIsFinite<float>);
+		iter<double>(static_cast<const double *>(dblArray), size, &ftIsFinite<const double>);
+		iter<double>(dblArray, size, &ftIsFinite<double>);
 
 		delete[] dblArray;
 		delete[] fltArray;

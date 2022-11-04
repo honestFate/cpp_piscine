@@ -20,7 +20,7 @@ Array<T>::~Array()
 }
 
 template<typename T>
-Array<T>::Array(const Array<T>& src) : _array(new T[0]()), _size(0)
+Array<T>::Array(const Array<T>& src) : _size(0)
 {
 	std::cout << "Array<T> copy constructor" << std::endl;
 	*this = src;
@@ -31,20 +31,23 @@ const Array<T>& Array<T>::operator=(const Array<T>& src)
 {
 	if (this != &src)
 	{
-		delete[] this->_array;
+		if (this->_size != 0)
+		{
+			delete[] this->_array;
+		}
 		this->_array = new int[src.size()];
 		for (size_t i = 0; i < src.size(); i++)
 		{
 			this->_array[i] = src._array[i];
 		}
 	}
-	return (*this);
+	return *this;
 }
 
 template<typename T>
 T&	Array<T>::operator[](int index)
 {
-	if (static_cast<size_t>(index) >= _size)
+	if (static_cast<size_t>(index) >= _size || index < 0)
 	{
 		throw std::exception();
 	}

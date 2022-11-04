@@ -11,11 +11,13 @@ template<typename T>
 void	iter(T const * array, size_t arraySize, void (*f)(const T &));
 
 template<typename T>
-void	ftIsFinite(const T &);
+void	ftIsFinite(T&);
 
-void	ftIsFinite(const float &);
+template<>
+void	ftIsFinite<float>(float &);
 
-void	ftIsFinite(const float &);
+template<>
+void	ftIsFinite<const float>(const float &);
 
 template<typename T>
 void	addOne(T &);
