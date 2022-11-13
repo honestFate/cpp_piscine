@@ -21,19 +21,8 @@ const Span& Span::operator=(const Span& src)
 {
 	if (this != &src)
 	{
-		std::vector<int>::const_iterator first = src._vec.begin();
-		std::vector<int>::const_iterator last;
-		if (src._vec.begin() + this->_size >= src._vec.end())
-		{
-			last = src._vec.end();
-		}
-		else
-		{
-			last = src._vec.begin() + this->_size;
-		}
-		this->_vec.resize(last - first);
-		std::copy(first, last, this->_vec.begin());
-		std::cout << "ok " << std::endl;
+		this->_vec = src._vec;
+		this->_size = src.getSize();
 	}
 	return (*this);
 }
@@ -77,7 +66,7 @@ size_t	Span::longestSpan() const
 		- *(std::min_element(this->_vec.begin(), this->_vec.end())));
 }
 
-void	Span::printVec() const
+void	Span::printVec()
 {
 	std::cout << "The numbers in vector with size " << this->_vec.size() << " and max size " << this->_size << std::endl;
 	std::copy(this->_vec.begin(), this->_vec.end(), std::ostream_iterator<int>(std::cout, " "));
@@ -86,7 +75,8 @@ void	Span::printVec() const
 
 int	Span::getRandom()
 {
-	return std::rand() % 100;
+	int	random = std::rand() % 10000;
+	return random;
 }
 
 void	Span::fillRandom()

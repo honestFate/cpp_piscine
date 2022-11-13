@@ -27,7 +27,7 @@ public:
 	void		addNumber(int number);
 	size_t		shortestSpan();
 	size_t		longestSpan() const;
-	void		printVec() const;
+	void		printVec();
 	void		fillRandom();
 	size_t		getSize() const;
 
